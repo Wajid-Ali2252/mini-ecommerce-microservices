@@ -9,4 +9,7 @@ spring:
       server:
         git:
           uri: https://github.com/Wajid-Ali2252/mini-ecommerce-microservices
-          
+          clone-on-start: true
+          # Agar files kisi specific folder ke andar hain (jaise 'config-repo'), toh niche wali line enable karein:
+          # search-paths: config-repo 
+          default-label: main # Ya 'master' jo bhi aapki branch ka naam hai

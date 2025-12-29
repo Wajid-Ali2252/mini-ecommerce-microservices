@@ -1,3 +1,15 @@
+server:
+  port: 9093
+
 spring:
   application:
     name: product-service
+  config:
+    import: "optional:configserver:http://localhost:9999"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9098/eureka/  # Yahan 9098 hona zaroori hai
+    register-with-eureka: true
+    fetch-registry: true
