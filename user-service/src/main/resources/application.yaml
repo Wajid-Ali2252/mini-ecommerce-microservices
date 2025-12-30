@@ -1,17 +1,7 @@
-server:
-  port: 9092
-
 spring:
   application:
     name: user-service
+  profiles:
+    active: test
   config:
     import: "optional:configserver:http://localhost:9999"
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:9098/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true

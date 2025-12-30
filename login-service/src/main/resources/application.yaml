@@ -4,18 +4,7 @@ server:
 spring:
   application:
     name: login-service
+  profiles:
+    active: test  
   config:
     import: "optional:configserver:http://localhost:9999"
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:9098/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-    healthcheck:
-      enabled: true
-  instance:
-    prefer-ip-address: true
-    health-check-url-path: /actuator/health
-    status-page-url-path: /actuator/info

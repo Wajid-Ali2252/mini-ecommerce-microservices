@@ -1,0 +1,14 @@
+server:
+  port: 9092
+
+spring:
+  cloud:
+    discovery:
+      enabled: false
+  security:
+    enabled: false
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
