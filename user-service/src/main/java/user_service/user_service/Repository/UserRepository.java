@@ -1,5 +1,6 @@
 package user_service.user_service.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +12,6 @@ import user_service.user_service.Entity.Users;
 public interface UserRepository extends JpaRepository<Users,Long> {
 
 	Optional<Users> findByUserEmail(String userEmail);
+	Optional<Users> findByUserId(Long Id);
+	
 }
