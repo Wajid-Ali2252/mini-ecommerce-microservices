@@ -1,4 +1,4 @@
-package login_service.login_service;
+package api_gateway.api_gateway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
