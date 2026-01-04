@@ -10,11 +10,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 
-@SpringBootApplication(exclude = { 
-	    SecurityAutoConfiguration.class, 
-	    ManagementWebSecurityAutoConfiguration.class, // Actuator security
-	    UserDetailsServiceAutoConfiguration.class     // Default user service
-	})
+@SpringBootApplication
+//(exclude = { 
+//	    SecurityAutoConfiguration.class, 
+//	    ManagementWebSecurityAutoConfiguration.class, // Actuator security
+//	    UserDetailsServiceAutoConfiguration.class     // Default user service
+//	})
 public class LoginServiceApplication {
 
 	public static void main(String[] args) {
