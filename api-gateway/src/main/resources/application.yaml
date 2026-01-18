@@ -1,3 +1,43 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      # Discovery locator enable karne se Gateway Eureka ki list ko active use karega
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      
+      # Spring Boot 3.5.x migration ke mutabiq sahi hierarchy
+      server:
+        webflux:
+          routes:
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/order/**
+              filters:
+                - AuthenticationFilter
+                - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9098/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

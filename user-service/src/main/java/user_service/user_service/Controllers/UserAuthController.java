@@ -44,6 +44,7 @@ public class UserAuthController {
 		} catch (Exception ex) {
 			throw new RuntimeException("System error: " + ex.getMessage());
 		}
+		
 
 	}
 
